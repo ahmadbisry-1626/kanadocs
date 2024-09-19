@@ -16,6 +16,7 @@ import { FloatingComposer, FloatingThreads, liveblocksConfig, LiveblocksPlugin, 
 import Loader from '../Loader';
 import FloatingToolbar from './plugins/FloatingToolbarPlugin';
 import { useThreads } from '@liveblocks/react/suspense';
+import Comments from '../Comments';
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
@@ -54,7 +55,7 @@ export function Editor({ roomId, currentUserType }: { roomId: string, currentUse
                         <div className="editor-inner min-h-[1100px] relative mb-5 h-fit w-full max-w-[800px] shadow-md lg:mb-10">
                             <RichTextPlugin
                                 contentEditable={
-                                    <ContentEditable className="editor-input h-full" />
+                                    <ContentEditable className="editor-input h-full !caret-gray-50" />
                                 }
                                 placeholder={<Placeholder />}
                                 ErrorBoundary={LexicalErrorBoundary}
@@ -69,6 +70,7 @@ export function Editor({ roomId, currentUserType }: { roomId: string, currentUse
                     <LiveblocksPlugin>
                         <FloatingComposer className='w-[350px]' />
                         <FloatingThreads threads={threads} />
+                        <Comments />
                     </LiveblocksPlugin>
                 </div>
             </div>

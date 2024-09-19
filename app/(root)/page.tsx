@@ -28,7 +28,7 @@ export default async function Home() {
             </Navbar>
 
             {roomDocuments.data.length > 0 ? (
-                <div className="document-list-container">
+                <div className="document-list-container overflow-y-auto custom-scrollbar h-[calc(100vh-140px)]">
                     <div className="document-list-title">
                         <h3 className="text-28-semibold">
                             All documents
