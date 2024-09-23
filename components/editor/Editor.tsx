@@ -17,6 +17,8 @@ import Loader from '../Loader';
 import FloatingToolbar from './plugins/FloatingToolbarPlugin';
 import { useThreads } from '@liveblocks/react/suspense';
 import Comments from '../Comments';
+import Link from 'next/link';
+import { HiMiniHome } from "react-icons/hi2";
 
 // Catch any errors that occur during Lexical updates and log them
 // or throw them as needed. If you don't throw them, Lexical will
@@ -44,9 +46,15 @@ export function Editor({ roomId, currentUserType }: { roomId: string, currentUse
     return (
         <LexicalComposer initialConfig={initialConfig}>
             <div className="editor-container size-full">
-                <div className='toolbar-wrapper flex min-w-full justify-between'>
+                <div className='toolbar-wrapper flex min-w-full items-center justify-between'>
                     <ToolbarPlugin />
                     {/* {currentUserType === 'editor' && <DeleteModal roomId={roomId}/>} */}
+                    <Link href="/" className='text-gray-400 transition-all duration-300 font-medium hidden md:flex items-center group'>
+                        <HiMiniHome className='w-8 h-8 group-hover:-translate-x-2 translate-x-16 transition-all duration-300' />
+                        <span className='opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all duration-300'>
+                            Go back
+                        </span>
+                    </Link>
                 </div>
                 <div className='editor-wrapper flex flex-col items-center justify-start'>
                     {status === 'not-loaded' || status === 'loading' ? (

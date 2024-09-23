@@ -63,7 +63,7 @@ body {
   }
 
   .shad-select {
-    @apply w-fit border-none bg-transparent text-blue-100 !important;
+    @apply w-fit border-none text-blue-100 !important;
   }
 
   .shad-select svg {
