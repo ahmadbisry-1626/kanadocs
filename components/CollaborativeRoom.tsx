@@ -11,6 +11,7 @@ import { Input } from './ui/input'
 import Image from 'next/image'
 import { updateDocument } from '@/lib/actions/room.actions'
 import ShareModal from './ShareModal'
+import { revalidatePath } from 'next/cache'
 
 const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: CollaborativeRoomProps) => {
 

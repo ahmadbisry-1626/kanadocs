@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React, { useState } from 'react'
 import UserTypeSelector from './UserTypeSelector'
 import { Button } from './ui/button'
+import { removeCollaborator, updateDocumentAccess } from '@/lib/actions/room.actions'
 
 const Collaborator = ({ roomId, user, creatorId, collaborator, email }: CollaboratorProps) => {
     const [userType, setUserType] = useState(collaborator.userType || 'viewer')
@@ -9,10 +10,26 @@ const Collaborator = ({ roomId, user, creatorId, collaborator, email }: Collabor
     const [loading, setIsLoading] = useState(false)
 
     const shareDocumentHandler = async (type: string) => {
+        setIsLoading(true)
 
+        await updateDocumentAccess({
+            roomId,
+            email,
+            userType: type as UserType,
+            updatedBy: user
+        })
+
+        setIsLoading(false)
     }
     const removeCollaboratorHandler = async (email: string) => {
+        setIsLoading(true)
 
+        await removeCollaborator({
+            roomId,
+            email
+        })
+
+        setIsLoading(false)
     }
 
     return (
@@ -37,6 +54,27 @@ const Collaborator = ({ roomId, user, creatorId, collaborator, email }: Collabor
                 </div>
             </div>
 
+            {/* {creatorId === collaborator.id ? (
+                <p className='text-sm text-blue-100'>
+                    Owner
+                </p>
+            ) : creatorId !== collaborator.id && userType === 'editor' && creatorId !== user.id ? (
+                <p className='text-sm text-blue-100'>
+                    You
+                </p>
+            ) : (
+                <div className='flex items-center'>
+                    <UserTypeSelector
+                        userType={userType as UserType}
+                        setUserType={setUserType || 'viewer'}
+                        onClickHandler={shareDocumentHandler}
+                    />
+                    <Button className='bg-[#1C274C] hover:bg-[#1C274C]' type='button' onClick={() => removeCollaboratorHandler(collaborator.email)}>
+                        Remove
+                    </Button>
+                </div>
+            )} */}
+
             {creatorId === collaborator.id ? (
                 <p className='text-sm text-blue-100'>
                     Owner
@@ -53,6 +91,8 @@ const Collaborator = ({ roomId, user, creatorId, collaborator, email }: Collabor
                     </Button>
                 </div>
             )}
+
+
         </li>
     )
 }

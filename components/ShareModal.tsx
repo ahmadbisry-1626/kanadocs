@@ -17,6 +17,7 @@ import { Input } from './ui/input'
 import { MdEmail } from "react-icons/md";
 import UserTypeSelector from './UserTypeSelector'
 import Collaborator from './Collaborator'
+import { updateDocumentAccess } from '@/lib/actions/room.actions'
 
 
 const ShareModal = ({ roomId, currentUserType, collaborators, creatorId }: ShareDocumentDialogProps) => {
@@ -28,12 +29,21 @@ const ShareModal = ({ roomId, currentUserType, collaborators, creatorId }: Share
     const [userType, setUserType] = useState<UserType>('viewer')
 
     const shareDocumentHandler = async () => {
+        setIsLoading(true)
 
+        await updateDocumentAccess({
+            roomId,
+            email,
+            userType: userType as UserType,
+            updatedBy: user.info
+        })
+
+        setIsLoading(false)
     }
 
     return (
         <Dialog open={open} onOpenChange={setIsOpen}>
-            <DialogTrigger>
+            <DialogTrigger disabled={currentUserType !== 'editor'}>
                 <Button className='bg-[#1C274C] hover:bg-[#1C274C] flex h-9 gap-2 group overflow-hidden relative' disabled={currentUserType !== 'editor'}>
                     <Image src="/assets/icons/share-img.svg" alt='share-button' width={18} height={18} className='min-w-4 md:size-5 group-hover:-translate-y-4 group-hover:opacity-0 transition-all duration-300' />
                     <p className='mr-1 hidden sm:block group-hover:-translate-y-4 group-hover:opacity-0 transition-all duration-300'>Share</p>
@@ -70,6 +80,11 @@ const ShareModal = ({ roomId, currentUserType, collaborators, creatorId }: Share
                 </div>
 
                 <div className='my-2 space-y-2'>
+                    {collaborators.length > 0 && (
+                        <h3 className='text-[16px] font-medium text-gray-50'>
+                            Who's in this project
+                        </h3>
+                    )}
                     <ul className='flex flex-col'>
                         {collaborators.map((collaborator) => (
                             <Collaborator
