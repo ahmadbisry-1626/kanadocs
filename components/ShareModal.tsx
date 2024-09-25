@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from './ui/button'
 import Image from 'next/image'
-import { Label } from './ui/label'
 import { Input } from './ui/input'
 import { MdEmail } from "react-icons/md";
 import UserTypeSelector from './UserTypeSelector'
@@ -82,7 +81,7 @@ const ShareModal = ({ roomId, currentUserType, collaborators, creatorId }: Share
                 <div className='my-2 space-y-2'>
                     {collaborators.length > 0 && (
                         <h3 className='text-[16px] font-medium text-gray-50'>
-                            Who's in this project
+                            Who&lsquo;s in this project
                         </h3>
                     )}
                     <ul className='flex flex-col'>

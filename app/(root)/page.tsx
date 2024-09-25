@@ -2,7 +2,6 @@ import AddDocumentButton from "@/components/AddDocumentButton";
 import { DeleteModal } from "@/components/DeleteModal";
 import Navbar from "@/components/Navbar";
 import Notifications from "@/components/Notifications";
-import { Button } from "@/components/ui/button";
 import { fetchDocuments } from "@/lib/actions/room.actions";
 import { dateConverter } from "@/lib/utils";
 import { SignedIn, UserButton } from "@clerk/nextjs";

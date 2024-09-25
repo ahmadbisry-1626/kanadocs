@@ -5,7 +5,6 @@ import { getClerkUser, getDocumentUsers } from "@/lib/actions/user.actions";
 import { useUser } from "@clerk/nextjs";
 import {
     LiveblocksProvider,
-    RoomProvider,
     ClientSideSuspense,
 } from "@liveblocks/react/suspense";
 import { ReactNode } from "react";

@@ -1,7 +1,7 @@
 'use client'
 
 import { ClientSideSuspense, RoomProvider } from '@liveblocks/react/suspense'
-import React, { ReactNode, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Loader from './Loader'
 import Navbar from './Navbar'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs'
@@ -11,7 +11,6 @@ import { Input } from './ui/input'
 import Image from 'next/image'
 import { updateDocument } from '@/lib/actions/room.actions'
 import ShareModal from './ShareModal'
-import { revalidatePath } from 'next/cache'
 
 const CollaborativeRoom = ({ roomId, roomMetadata, users, currentUserType }: CollaborativeRoomProps) => {
 

@@ -17,8 +17,6 @@ import Loader from '../Loader';
 import FloatingToolbar from './plugins/FloatingToolbarPlugin';
 import { useThreads } from '@liveblocks/react/suspense';
 import Comments from '../Comments';
-import Link from 'next/link';
-import { HiMiniHome } from "react-icons/hi2";
 import { DeleteModal } from '../DeleteModal';
 
 // Catch any errors that occur during Lexical updates and log them

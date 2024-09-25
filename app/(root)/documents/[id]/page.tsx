@@ -3,7 +3,6 @@ import { getDocument } from '@/lib/actions/room.actions'
 import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 import React from 'react'
-import { metadata } from '../../../layout';
 import { getClerkUser } from '@/lib/actions/user.actions'
 
 const Document = async ({ params: { id } }: SearchParamProps) => {
