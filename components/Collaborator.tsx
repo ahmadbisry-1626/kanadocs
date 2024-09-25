@@ -32,8 +32,10 @@ const Collaborator = ({ roomId, user, creatorId, collaborator, email }: Collabor
         setIsLoading(false)
     }
 
+    const owner = creatorId === collaborator.id
+
     return (
-        <li className='flex items-center justify-between gap-2 py-3'>
+        <li className={`flex items-center justify-between gap-2 py-3 max-md:flex-col max-md:gap-3 max-md:items-start ${owner && '!flex-row !items-center'}`}>
             <div className='flex gap-2'>
                 <Image
                     src={collaborator.avatar}
@@ -54,33 +56,12 @@ const Collaborator = ({ roomId, user, creatorId, collaborator, email }: Collabor
                 </div>
             </div>
 
-            {/* {creatorId === collaborator.id ? (
-                <p className='text-sm text-blue-100'>
-                    Owner
-                </p>
-            ) : creatorId !== collaborator.id && userType === 'editor' && creatorId !== user.id ? (
-                <p className='text-sm text-blue-100'>
-                    You
-                </p>
-            ) : (
-                <div className='flex items-center'>
-                    <UserTypeSelector
-                        userType={userType as UserType}
-                        setUserType={setUserType || 'viewer'}
-                        onClickHandler={shareDocumentHandler}
-                    />
-                    <Button className='bg-[#1C274C] hover:bg-[#1C274C]' type='button' onClick={() => removeCollaboratorHandler(collaborator.email)}>
-                        Remove
-                    </Button>
-                </div>
-            )} */}
-
             {creatorId === collaborator.id ? (
                 <p className='text-sm text-blue-100'>
                     Owner
                 </p>
             ) : (
-                <div className='flex items-center'>
+                <div className='flex items-center max-md:ml-8'>
                     <UserTypeSelector
                         userType={userType as UserType}
                         setUserType={setUserType || 'viewer'}

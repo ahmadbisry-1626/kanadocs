@@ -1,6 +1,7 @@
 import AddDocumentButton from "@/components/AddDocumentButton";
 import { DeleteModal } from "@/components/DeleteModal";
 import Navbar from "@/components/Navbar";
+import Notifications from "@/components/Notifications";
 import { Button } from "@/components/ui/button";
 import { fetchDocuments } from "@/lib/actions/room.actions";
 import { dateConverter } from "@/lib/utils";
@@ -21,7 +22,7 @@ export default async function Home() {
         <main className="home-container">
             <Navbar className="sticky left-0 top-0">
                 <div className="flex items-center gap-2 sm:gap-4">
-                    Notifications
+                    <Notifications />
                     <SignedIn>
                         <UserButton />
                     </SignedIn>
