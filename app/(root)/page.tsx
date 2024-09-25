@@ -1,4 +1,5 @@
 import AddDocumentButton from "@/components/AddDocumentButton";
+import { DeleteModal } from "@/components/DeleteModal";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { fetchDocuments } from "@/lib/actions/room.actions";
@@ -49,12 +50,7 @@ export default async function Home() {
                                     </div>
                                 </Link>
 
-                                <div className="group flex flex-col items-center">
-                                    <Image src="/assets/icons/delete.svg" alt="delete" width={28} height={28} className="cursor-pointer translate-y-3 group-hover:-translate-y-4 group-hover:opacity-0 transition-all duration-700" />
-                                    <p className="text-red-500 opacity-0 cursor-pointer group-hover:-translate-y-4 group-hover:opacity-100 transition-all duration-700">
-                                        Delete
-                                    </p>
-                                </div>
+                                <DeleteModal roomId={id} title={metadata.title} />
                             </li>
                         ))}
                     </ul>
