@@ -78,6 +78,8 @@ const ShareModal = ({ roomId, currentUserType, collaborators, creatorId }: Share
                     </Button>
                 </div>
 
+                <span className='text-sm italic text-gray-400'>*You can only invite someone who has registered with kanadocs. So sorry this happened.</span>
+
                 <div className='my-2 space-y-2'>
                     {collaborators.length > 0 && (
                         <h3 className='text-[16px] font-medium text-gray-50'>

@@ -26,7 +26,7 @@ export const createDocument = async ({ userId, email }: CreateDocumentParams) =>
             defaultAccesses: []
         });
 
-        revalidatePath('/')
+        revalidatePath('/documents')
         return parseStringify(room)
 
     } catch (error) {
@@ -138,8 +138,8 @@ export const deleteDocument = async (roomId: string) => {
     try {
         await liveblocks.deleteRoom(roomId)
 
-        revalidatePath('/')
-        redirect('/')
+        revalidatePath('/documents')
+        redirect('/documents')
     } catch (error) {
         console.log(`Error happened while deleting a room: ${error}`)
     }

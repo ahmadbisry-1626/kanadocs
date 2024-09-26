@@ -26,6 +26,7 @@
         "@sentry/nextjs": "^8.30.0",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.1",
+        "framer-motion": "^11.7.0",
         "jsm-editor": "^0.0.12",
         "jsme-editor": "^2024.4.29",
         "lexical": "^0.16.1",
