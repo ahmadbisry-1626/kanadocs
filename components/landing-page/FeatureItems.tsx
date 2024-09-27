@@ -10,7 +10,7 @@ const FeatureItems = ({ title, imgUrl }: { title: string, imgUrl: string }) => {
 
     return (
         <motion.div
-            className='flex flex-col items-center sm:gap-8 gap-4'
+            className='sm:flex flex-col items-center sm:gap-8 gap-4 hidden'
             initial={{ opacity: 0, x: transformOrder }}
             whileInView={{ opacity: 100, x: 0 }}
             transition={{
@@ -22,7 +22,7 @@ const FeatureItems = ({ title, imgUrl }: { title: string, imgUrl: string }) => {
             <h1 className='text-[24px] text-center sm:text-[36px] sm:font-semibold font-medium'>
                 {title}
             </h1>
-            <Image src={imgUrl} alt='image of feature' width={1100} height={1100} loading='lazy'/>
+            <Image src={imgUrl} alt='image of feature' width={1100} height={1100} loading='lazy' quality={100} sizes='110vw'/>
         </motion.div>
     )
 }

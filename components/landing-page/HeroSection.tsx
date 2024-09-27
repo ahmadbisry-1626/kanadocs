@@ -8,18 +8,32 @@ import { BackgroundLines } from '../ui/background-lines';
 
 const HeroSection = () => {
     const colors = [
-        '#ff4343',
-        '#ff9843',
-        '#ffec43',
-        '#baff43',
-        '#5fff43',
-        '#43ff91',
-        '#43ffd3',
-        '#43caff',
-        '#4643ff',
-        '#dd43ff',
-        '#ff43c0'
+        '#FF6B6B', // soft red
+        '#FF8E72', // coral
+        '#FFAD61', // orange
+        '#FFD85A', // golden yellow
+        '#C0E76A', // light green
+        '#6BCB77', // green
+        '#4D96FF', // blue
+        '#3A86FF', // deep blue
+        '#8366FF', // violet
+        '#C17DFF', // light purple
+        '#FF5D8F'  // pinkish red
     ];
+
+    const secondColors = [
+        '#4D96FF', // blue
+    '#C0E76A', // light green
+    '#FF5D8F', // pinkish red
+    '#FFD85A', // golden yellow
+    '#FF8E72', // coral
+    '#6BCB77', // green
+    '#3A86FF', // deep blue
+    '#8366FF', // violet
+    '#FF6B6B', // soft red
+    '#FFAD61', // orange
+    '#C17DFF'  // light purple
+    ]
 
     return (
         <BackgroundLines className='min-h-screen bg-gradient-to-b from-[#09111F] to-[#0e1a2e] w-full flex justify-center items-center relative overflow-hidden px-5'>
@@ -62,6 +76,48 @@ const HeroSection = () => {
 
             <div className='absolute bottom-0 flex flex-col gap-2 overflow-hidden'>
                 <div className='flex gap-2'>
+                    <motion.div
+                        className='flex gap-2'
+                        initial={{ x: 0 }}
+                        animate={{ x: "-100%" }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 50,
+                            ease: "linear",
+                        }} >
+                        {Array.from({ length: 11 }).map((_, idx) => {
+                            const color = colors[idx % colors.length];
+
+                            return (
+                                <div
+                                    style={{ backgroundColor: color }}
+                                    className={`sm:w-[150px] sm:h-[50px] w-[90px] h-[50px] sm:rounded-[12px] rounded-[8px]`}
+                                    key={idx}
+                                />
+                            )
+                        })}
+                    </motion.div>
+                    <motion.div
+                        className='flex gap-2'
+                        initial={{ x: 0 }}
+                        animate={{ x: "-100%" }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 50,
+                            ease: "linear",
+                        }} >
+                        {Array.from({ length: 11 }).map((_, idx) => {
+                            const color = colors[idx % colors.length];
+
+                            return (
+                                <div
+                                    style={{ backgroundColor: color }}
+                                    className={`sm:w-[150px] sm:h-[50px] w-[90px] h-[50px] sm:rounded-[12px] rounded-[8px]`}
+                                    key={idx}
+                                />
+                            )
+                        })}
+                    </motion.div>
                     <motion.div
                         className='flex gap-2'
                         initial={{ x: 0 }}
@@ -180,6 +236,155 @@ const HeroSection = () => {
                         }} >
                         {Array.from({ length: 11 }).map((_, idx) => {
                             const color = colors[idx % colors.length];
+
+                            return (
+                                <div
+                                    style={{ backgroundColor: color }}
+                                    className={`sm:w-[150px] sm:h-[50px] w-[90px] h-[50px] sm:rounded-[12px] rounded-[8px]`}
+                                    key={idx}
+                                />
+                            )
+                        })}
+                    </motion.div>
+                    <motion.div
+                        className='flex gap-2'
+                        initial={{ x: 0 }}
+                        animate={{ x: "100%" }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 60,
+                            ease: "linear",
+                        }} >
+                        {Array.from({ length: 11 }).map((_, idx) => {
+                            const color = colors[idx % colors.length];
+
+                            return (
+                                <div
+                                    style={{ backgroundColor: color }}
+                                    className={`sm:w-[150px] sm:h-[50px] w-[90px] h-[50px] sm:rounded-[12px] rounded-[8px]`}
+                                    key={idx}
+                                />
+                            )
+                        })}
+                    </motion.div>
+                    <motion.div
+                        className='flex gap-2'
+                        initial={{ x: 0 }}
+                        animate={{ x: "100%" }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 60,
+                            ease: "linear",
+                        }} >
+                        {Array.from({ length: 11 }).map((_, idx) => {
+                            const color = colors[idx % colors.length];
+
+                            return (
+                                <div
+                                    style={{ backgroundColor: color }}
+                                    className={`sm:w-[150px] sm:h-[50px] w-[90px] h-[50px] sm:rounded-[12px] rounded-[8px]`}
+                                    key={idx}
+                                />
+                            )
+                        })}
+                    </motion.div>
+                </div>
+                <div className='flex gap-2 sm:hidden'>
+                    <motion.div
+                        className='flex gap-2'
+                        initial={{ x: 0 }}
+                        animate={{ x: "-100%" }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 50,
+                            ease: "linear",
+                        }} >
+                        {Array.from({ length: 11 }).map((_, idx) => {
+                            const color = secondColors[idx % colors.length];
+
+                            return (
+                                <div
+                                    style={{ backgroundColor: color }}
+                                    className={`sm:w-[150px] sm:h-[50px] w-[90px] h-[50px] sm:rounded-[12px] rounded-[8px]`}
+                                    key={idx}
+                                />
+                            )
+                        })}
+                    </motion.div>
+                    <motion.div
+                        className='flex gap-2'
+                        initial={{ x: 0 }}
+                        animate={{ x: "-100%" }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 50,
+                            ease: "linear",
+                        }} >
+                        {Array.from({ length: 11 }).map((_, idx) => {
+                            const color = secondColors[idx % colors.length];
+
+                            return (
+                                <div
+                                    style={{ backgroundColor: color }}
+                                    className={`sm:w-[150px] sm:h-[50px] w-[90px] h-[50px] sm:rounded-[12px] rounded-[8px]`}
+                                    key={idx}
+                                />
+                            )
+                        })}
+                    </motion.div>
+                    <motion.div
+                        className='flex gap-2'
+                        initial={{ x: 0 }}
+                        animate={{ x: "-100%" }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 50,
+                            ease: "linear",
+                        }} >
+                        {Array.from({ length: 11 }).map((_, idx) => {
+                            const color = secondColors[idx % colors.length];
+
+                            return (
+                                <div
+                                    style={{ backgroundColor: color }}
+                                    className={`sm:w-[150px] sm:h-[50px] w-[90px] h-[50px] sm:rounded-[12px] rounded-[8px]`}
+                                    key={idx}
+                                />
+                            )
+                        })}
+                    </motion.div>
+                    <motion.div
+                        className='flex gap-2'
+                        initial={{ x: 0 }}
+                        animate={{ x: "-100%" }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 50,
+                            ease: "linear",
+                        }} >
+                        {Array.from({ length: 11 }).map((_, idx) => {
+                            const color = secondColors[idx % colors.length];
+
+                            return (
+                                <div
+                                    style={{ backgroundColor: color }}
+                                    className={`sm:w-[150px] sm:h-[50px] w-[90px] h-[50px] sm:rounded-[12px] rounded-[8px]`}
+                                    key={idx}
+                                />
+                            )
+                        })}
+                    </motion.div>
+                    <motion.div
+                        className='flex gap-2'
+                        initial={{ x: 0 }}
+                        animate={{ x: "-100%" }}
+                        transition={{
+                            repeat: Infinity,
+                            duration: 50,
+                            ease: "linear",
+                        }} >
+                        {Array.from({ length: 11 }).map((_, idx) => {
+                            const color = secondColors[idx % colors.length];
 
                             return (
                                 <div

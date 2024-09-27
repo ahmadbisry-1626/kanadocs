@@ -6,11 +6,13 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div className='flex flex-col items-center w-full relative'>
-            <NavbarLandingPage />
-            <HeroSection />
-            <Features />
-            <Footer />
+        <div className='overflow-y-auto custom-scrollbar h-[calc(100vh-10px)]'>
+            <div className='flex flex-col items-center w-full relative'>
+                <NavbarLandingPage />
+                <HeroSection />
+                <Features />
+                <Footer />
+            </div>
         </div>
     )
 }
