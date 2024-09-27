@@ -9,6 +9,7 @@
 
 body {
     font-family: var(--poppins);
+    scroll-behavior: smooth;
 }
 
 /* ========================================== TAILWIND STYLES */
@@ -17,6 +18,10 @@ body {
         background: #09111f;
         color: #fff;
         margin: 0;
+        scroll-behavior: smooth;
+    }
+
+    .custom-scrollbar {
         scroll-behavior: smooth;
     }
 
