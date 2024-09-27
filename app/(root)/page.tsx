@@ -6,7 +6,7 @@ import React from 'react'
 
 const page = () => {
     return (
-        <div className='overflow-y-auto custom-scrollbar h-[calc(100vh-10px)]'>
+        <div className='overflow-y-auto custom-scrollbar h-[calc(100vh)]'>
             <div className='flex flex-col items-center w-full relative'>
                 <NavbarLandingPage />
                 <HeroSection />
