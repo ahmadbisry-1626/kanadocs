@@ -11,7 +11,7 @@ const Features = () => {
             <FeatureItems title='Stay informed. Never miss a beat.' imgUrl='/assets/images/feature4.png' />
 
             <FeatureItemsMobile title='Organize with ease. Stay focused.' imgUrl='/assets/images/feature1-mobile.png' />
-            <FeatureItemsMobile title='Collaborate seamlessly. Empower your team.' imgUrl='/assets/images/feature2-mobile.png' />
+            <FeatureItemsMobile title='Collaborate seamlessly. Empower your team.' imgUrl='/assets/images/feature2-mobile-censored.png' />
             <FeatureItemsMobile title='Work together, always stay in sync.' imgUrl='/assets/images/feature3-mobile.png' />
             <FeatureItemsMobile title='Stay informed. Never miss a beat.' imgUrl='/assets/images/feature4-mobile.png' />
         </section>
